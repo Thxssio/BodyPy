@@ -6,7 +6,7 @@
 
 # POSE
 
-![alt text]((https://learnopencv.com/wp-content/uploads/2022/03/MediaPipe-pose-BlazePose-Topology.jpg)
+![alt text](https://learnopencv.com/wp-content/uploads/2022/03/MediaPipe-pose-BlazePose-Topology.jpg)
 
 
 
