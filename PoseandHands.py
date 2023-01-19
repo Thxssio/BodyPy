@@ -2,12 +2,17 @@ import cv2
 import mediapipe as mp
 
 
-
 Video = cv2.VideoCapture(0)
 
 hands = mp.solutions.hands
-Hands = hands.Hands(max_num_hands=1)
+Hands = hands.Hands(max_num_hands=2)
 mpDraw = mp.solutions.drawing_utils
+
+
+mp_drawing = mp.solutions.drawing_utils
+mp_pose = mp.solutions.pose
+pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+
 
 while True:
     check, img = Video.read()
@@ -17,7 +22,11 @@ while True:
     
     h, w, _ = img.shape
     pontos = []
+
+    pose_results = pose.process(img)
+    mp_drawing.draw_landmarks(img, pose_results.pose_landmarks, mp_pose.POSE_CONNECTIONS)
     
+
     if handsPoints:
         for points in handsPoints:
             #print(points)
@@ -43,8 +52,8 @@ while True:
         cv2.putText(img, str(contador),(100,100), cv2.FONT_HERSHEY_SIMPLEX, 4,(255,0,0), 5)
 
 
+
+
     cv2.imshow("Camera", img)
     cv2.waitKey(1)
 
-
-2
