@@ -1,5 +1,5 @@
  <h1 align="center">
-<br>MEDIAPIPE e OPENCV, GESTOS COM O CORPO HUMANO
+<br>MEDIAPIPE, GESTOS COM O CORPO HUMANO
 </h1>
 
 ## 📚 Sobre
